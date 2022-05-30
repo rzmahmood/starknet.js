@@ -5,6 +5,7 @@ import {
   AddTransactionResponse,
   Call,
   DeployContractPayload,
+  DeployContractRPCResponse,
   Invocation,
   InvocationsDetails,
   Signature,
@@ -31,7 +32,7 @@ export abstract class AccountInterface extends ProviderInterface {
   public abstract override deployContract(
     payload: DeployContractPayload,
     abi?: Abi
-  ): Promise<AddTransactionResponse>;
+  ): Promise<AddTransactionResponse | DeployContractRPCResponse>;
 
   /**
    * Estimate Fee for a method on starknet
